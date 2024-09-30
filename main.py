@@ -44,5 +44,7 @@ with st.form("summarize_form", clear_on_submit=True):
         result.append(response)
         del openai_api_key
 
+translated_summary = f"Por favor, traduce el siguiente texto al español: {response}"
+
 if len(result):
-    st.info(response)
+    st.info(translated_summary)
