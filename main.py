@@ -46,4 +46,4 @@ with st.form("summarize_form", clear_on_submit=True):
         del openai_api_key
 
 if len(result):
-    st.info(response)
+    st.info(translated_summary)
