@@ -41,10 +41,9 @@ with st.form("summarize_form", clear_on_submit=True):
     submitted = st.form_submit_button("Enviar")
     if submitted and openai_api_key.startswith("sk-"):
         response = generate_response(txt_input)
+        translated_summary = (f"Por favor, traduce el siguiente texto al español: {response}")
         result.append(response)
         del openai_api_key
 
-translated_summary = f"Por favor, traduce el siguiente texto al español: {response}"
-
 if len(result):
-    st.info(translated_summary)
+    st.info(response)
